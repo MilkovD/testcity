@@ -21,5 +21,9 @@
 
 .duration {
     display: inline-block;
-    margin-left: 4px;
+    margin-left: auto;
+}
+
+.timeContainer {
+    display: flex;
 }

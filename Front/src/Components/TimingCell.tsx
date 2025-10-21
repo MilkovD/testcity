@@ -27,16 +27,18 @@ export function TimingCell({ startDateTime, duration }: TimingCellProps) {
                         )}
                     </div>
                 }>
-                <span className={styles.started}>{formatRelativeTime(startDateTime)}</span>
-                {duration != null && (
-                    <span
-                        className={styles.duration}
-                        style={{
-                            width: formatTestDuration(duration.toString()).length * 9,
-                        }}>
-                        {formatTestDuration(duration.toString())}
-                    </span>
-                )}
+                <span className={styles.timeContainer}>
+                    <span className={styles.started}>{toLocalTimeFromUtc(startDateTime, "short")}</span>
+                    {duration != null && (
+                        <span
+                            className={styles.duration}
+                            style={{
+                                width: formatTestDuration(duration.toString()).length * 9,
+                            }}>
+                            {formatTestDuration(duration.toString())}
+                        </span>
+                    )}
+                </span>
             </Hint>
         </td>
     );
